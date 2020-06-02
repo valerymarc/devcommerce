@@ -6,12 +6,17 @@ import Navbar from './components/Navbar';
 import SideMenu from './components/SideMenu';
 import List from './components/List';
 import  { list } from './data';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Panier from './pages/Panier';
 
 
 const App = () =>{
 
-
+  const [count, setCount]= useState(1);
   const [category, setCategory] = useState(0);
+  const [filtering, setFiltering] = useState(false);
+  const [filtered, setFiltered] = useState(false);
   const chargeCategory = i =>{
      // console.log("Numéro "+i);
       setCategory(i);
@@ -21,32 +26,35 @@ const App = () =>{
      //on utiise flat pour faire une liste dans un tableau
      let fulllist = list.flat()
    
-     let filtered = fulllist.filter(item => {
+     let resultat = fulllist.filter(item => {
        const name = item.name.toLowerCase()
        const cherche = input.toLowerCase()
        return name.indexOf(cherche) > -1
      })
-     console.log(filtered)
+     setFiltered(resultat)
   }
 
-//useEffect(()=>)
+useEffect(()=>{
+  console.log(filtering)
+})
 
   return(<Fragment>
-     <Navbar filter={filterResult}/>
-     <div className="container">
-       <div className="row">
-         <div className="col-sm-2">
-           <SideMenu chargeCategory={chargeCategory} category={category}/>
-         </div>
-         <div className="col-sm">
-           <div className="row">
-            <List  data={list[category]}  category={category}/>
-          
-           </div>
-         </div>
-       </div>%
-       </div>  
-    <p>Aucun produit dans la boutique</p></Fragment>); 
+    
+    <Router>
+     <Navbar filter={filterResult} setFiltering={setFiltering} count={count}/>
+     
+    {/*Gestion des routes*/}
+    <Route exact path="/" component={() => <Home     category={category} 
+                                              chargeCategory={chargeCategory} 
+                                              filtering={filtering}
+                                              filtered={filtered}
+                                              count={count}
+                                              ajtPanier={setCount}
+                                              list={list}/>} />
+    <Route path="/panier" component={Panier}/>
+
+    </Router>
+    </Fragment>); 
 }
 
 export default App;

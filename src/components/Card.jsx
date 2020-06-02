@@ -1,8 +1,12 @@
 import React from 'react';
 import '../data.js';
+import Modal from './Modal';
 
 const Card = props => {
-  const { elt} = props;
+  const {elt, count, ajtPanier} = props;
+  
+  const htarget = "#"+elt.ref
+  
     return (
         <div className="col-sm-4">
           <div className="card">
@@ -21,12 +25,12 @@ const Card = props => {
                   <p>
                       €{elt.price}/{elt.unit}
                   </p>
-                  <button className="btn btn-warning btn-sm">view product</button>
+                  <button className="btn btn-warning btn-sm"  data-toggle="modal" data-target={htarget}>Voir le produit</button>
                 </div>
               </div>
             </div>
           </div>
-          {/* Modal */}
+            <Modal  item={elt} count={count} ajtPanier={ajtPanier}/>
         </div>
       );
 }

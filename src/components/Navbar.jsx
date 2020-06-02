@@ -1,13 +1,14 @@
 import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
-import { Link } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
+import { Link } from 'react-router-dom';
 
-const Navbar = ({ filter })=>{
+
+const Navbar = ({ filter, setFiltering,count })=>{
   
   return (
-    <nav className="navbar orange navbar-expand-lg navbar-light bg-light fixed-top">
-        <a  className="navbar-brand crimson" href="/">   <i className="fas fa-shopping-cart"></i> Mes Courses en Ligne</a>
+    <nav className="navbar green navbar-expand-lg navbar-light bg-light fixed-top">
+        <Link className="navbar-brand crimson" to="/">   <i className="fas fa-shopping-cart"></i> Mes Courses en Ligne</Link>
+      
       <button
         className="navbar-toggler"
         type="button"
@@ -29,14 +30,21 @@ const Navbar = ({ filter })=>{
                 type="search"
                 placeholder="trouver un produit"
                 aria-label="Search"
-                onChange={(e)=> filter(e.target.value)}
+                onChange={(e)=> {
+                  setFiltering(e.target.value.length > 0)
+                  filter(e.target.value)
+                }}
                 />
             </form>
           </div>
           <div className="menu-right">
-             <a href="/cart">
-                <i class="fas fa-shopping-bag fa-2x grey"></i>
-             </a>
+             {/*Cart */}
+            <Link to="/panier">
+             <i className="fas fa-shopping-bag fa-2x grey"></i>
+             <span className="badge badge-pill badge-success">{count}</span>
+             </Link> 
+
+            
              {/* <span class="badge badge-pill badge-success">{items.length > 0 && items.length}</span> */}
           </div>
         </div>
