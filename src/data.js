@@ -71,6 +71,14 @@ const fruits = [
     price: 3.49,
     unit: "kg",
     image: "poires.png"
+  },
+  {
+    ref: "fruits_10",
+    category: 0,
+    name: "Pommes",
+    price: 2.49,
+    unit: "kg",
+    image: "pommes.jpg"
   }
 ];  
 

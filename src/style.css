@@ -197,5 +197,13 @@ body {
     background-color: darkmagenta;
   }
   
-  
+  .cat{
+    font-weight: bold;
+    background-color: white;
+    padding-left: 10%;
+    margin-top: 3%;
+  }
+  .cat:hover{
+    background-color: tomato;
+  }
   

@@ -41,6 +41,21 @@ const Navbar = ({ filter, setFiltering,count })=>{
              {/*Cart */}
             <Link to="/panier">
              <i className="fas fa-shopping-bag fa-2x grey"></i>
+             
+             <div class="p_icon">
+                        <a href="#">
+                          <i class="ti-eye"></i>
+                        </a>
+                        <a href="#">
+                          <i class="ti-heart"></i>
+                        </a>
+                        <a href="#">
+                          <i class="ti-shopping-cart"></i>
+                        </a>
+                      </div>
+            
+
+
              <span className="badge badge-pill badge-success">{count}</span>
              </Link> 
 

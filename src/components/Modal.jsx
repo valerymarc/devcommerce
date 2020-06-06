@@ -1,8 +1,15 @@
 import React, {useState} from 'react';
+import { useDispatch } from 'react-redux';
+import {addToPanier} from '../lib/action'
 
 const Modal = ({item, count, ajtPanier}) => {
    const [qty, setQty] = useState(1);
    
+   const dispatch = useDispatch()
+
+   const addPanier = (item, quantity) =>{
+     dispatch(addToPanier(item,quantity))
+   }
   
    const compter = () =>{
        
@@ -55,7 +62,7 @@ const Modal = ({item, count, ajtPanier}) => {
       </div>
       <div className="modal-footer">
         <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" className="btn btn-success" data-dismiss="modal" onClick={() => ajtPanier(count+1)}>Ajouter au panier</button>
+        <button type="button" className="btn btn-success" data-dismiss="modal" onClick={() => addPanier(item, qty)}>Ajouter au panier</button>
       </div>
     </div>
   </div>

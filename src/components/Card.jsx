@@ -3,9 +3,9 @@ import '../data.js';
 import Modal from './Modal';
 
 const Card = props => {
-  const {elt, count, ajtPanier} = props;
+  const {elt, count, mdfPanier} = props;
   
-  const htarget = "#"+elt.ref
+  const htarget = "#"+elt.ref;
   
     return (
         <div className="col-sm-4">
@@ -30,7 +30,7 @@ const Card = props => {
               </div>
             </div>
           </div>
-            <Modal  item={elt} count={count} ajtPanier={ajtPanier}/>
+            <Modal  item={elt} count={count} />
         </div>
       );
 }
