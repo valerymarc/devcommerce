@@ -4,7 +4,8 @@
 export const actions  ={
     ADD_TO_PANIER : "ADD_TO_PANIER",
     UPDATE_PANIER : "UPDATE_PANIER",
-    REMOVE_FROM_PANIER :  "REMOVE_FROM_PANIER"
+    REMOVE_FROM_PANIER :  "REMOVE_FROM_PANIER",
+    SAVE_PANIER : "SAVE_PANIER"
 }
 
 
@@ -19,17 +20,31 @@ export const actions  ={
     }
  }
 
- export function updatePanier(item, quantity){
+ /*export function updatePanier(item, quantity){
      return{
          type:actions.UPDATE_PANIER,
          payload:{item:item, quantity}
      }
- }
+ }*/
+
+ export function updatePanier(id, quantity){
+    return{
+        type:actions.UPDATE_PANIER,
+        payload:{id:id, quantity:quantity}
+    }
+}
 
 
- export function removeFromPanier(item){
+ export function removeFromPanier(id){
     return{
         type:actions.REMOVE_FROM_PANIER,
-        payload:{item:item}
+        payload:id
     }
  } 
+
+ export function savePanier(items){
+     return{
+         type:actions.SAVE_PANIER,
+         payload:{items:items}
+     }
+ }

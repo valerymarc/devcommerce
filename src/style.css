@@ -206,4 +206,24 @@ body {
   .cat:hover{
     background-color: tomato;
   }
+
+  .p_icon{
+    background-color: tomato;
+    width: 90%;
+    padding: 7px 30px;
+    position: absolute;
+    bottom: -100px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    background: rgba(113, 205, 20, 0.4);
+    transition: all 400ms ease;
+  }
+
+  .coul{
+    background-color: rgba(113, 205, 20, 0.4);
+  }
   

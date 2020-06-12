@@ -1,7 +1,14 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Row from './Row';
+import { useDispatch, useSelector } from 'react-redux';
 
-const Table = () => {
+const Table = ({items}) => {
+  {/*Acceder à l'état actuel de l'application 
+ items = useSelector(state => state.items);
+useEffect(()=>{
+  console.log('Vous avez '+items.length+' dans votre panier')
+  
+})*/}
     return (<table  className="table table-stripped">
         <tr>
           <th width="200">Product</th>
@@ -10,7 +17,10 @@ const Table = () => {
           <th width="150">Quantity</th>
           <th width="200">Total</th>
         </tr>
-        <Row/>
+        {/*Afficher dans les produits sélectionnés dans le panier*/}
+        {items.map(item => {
+          return (<Row item={item} />)
+        })}
       </table>  );
 }
  

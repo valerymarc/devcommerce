@@ -11,7 +11,7 @@ import { updatePanier } from './lib/action';
 
 
 const App = props =>{
-  const { items, onAddToPanier, onUpdatePanier } = props
+  const { items, saveLocalStorage } = props
 
   const [count, setCount]= useState(1);
   const [category, setCategory] = useState(0);
@@ -35,16 +35,12 @@ const App = props =>{
   }
 
 useEffect(()=>{
-  console.log(filtering)
-})
+  saveLocalStorage(items)
+}, [items])
 
-const add = (item, quantity) =>{
-   onAddToPanier(item, quantity)
-}
 
-const update = () =>{
 
-}
+
 
   return(<Fragment>
     
@@ -56,9 +52,7 @@ const update = () =>{
                                               chargeCategory={chargeCategory} 
                                               filtering={filtering}
                                               filtered={filtered}
-                                              count={count}
-                                              
-                                              mdfPanier={update}
+                                            
                                               list={list}/>} />
     <Route path="/panier" component={Panier}/>
 

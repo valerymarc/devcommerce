@@ -5,7 +5,7 @@ import List from '../components/List';
 
 
 const Home = props => {
-    const {category, chargeCategory, filtering,  mdfPanier, filtered, count,  list} = props
+    const {category, chargeCategory, filtering, filtered, list} = props
     return ( <div>
         <div className="container">
             
@@ -15,7 +15,7 @@ const Home = props => {
          </div>
          <div className="col-sm">
            <div className="row">
-            <List  data={filtering ? filtered : list[category]}  category={category} count={count} mdfPanier={mdfPanier}/>
+            <List  data={filtering ? filtered : list[category]}  category={category}/>
           
            </div>
          </div>

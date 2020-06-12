@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import App from '../../App';
-import { addToPanier, updatePanier } from '../../lib/action';
+import { savePanier } from '../../lib/action';
 
 export const AppContainer = connect(
     function mapStateToProps(state){
@@ -9,8 +9,9 @@ export const AppContainer = connect(
 
    function mapDispatchToProps(dispatch){
     return {   
-    onAddToPanier: (item, quantity) => dispatch(addToPanier(item, quantity)),
-    onUpdatePanier : (item, quantity) => dispatch(updatePanier(item, quantity))
+    //onAddToPanier: (item, quantity) => dispatch(addToPanier(item, quantity)),
+    //onUpdatePanier : (item, quantity) => dispatch(updatePanier(item, quantity))
+    saveLocalStorage : items => dispatch(savePanier(items))
     }
    }
 )(App)

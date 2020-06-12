@@ -3,13 +3,13 @@ import '../data.js';
 import Modal from './Modal';
 
 const Card = props => {
-  const {elt, count, mdfPanier} = props;
+  const {elt} = props;
   
   const htarget = "#"+elt.ref;
   
     return (
         <div className="col-sm-4">
-          <div className="card">
+         <div className="card">
             <img
               width="170"
               height="170"
@@ -30,7 +30,7 @@ const Card = props => {
               </div>
             </div>
           </div>
-            <Modal  item={elt} count={count} />
+    <Modal  item={elt} /> 
         </div>
       );
 }

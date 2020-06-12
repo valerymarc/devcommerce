@@ -1,10 +1,12 @@
 import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import '../style.css';
 
 
 const Navbar = ({ filter, setFiltering,count })=>{
-  
+  const items = useSelector(state => state.items)
   return (
     <nav className="navbar green navbar-expand-lg navbar-light bg-light fixed-top">
         <Link className="navbar-brand crimson" to="/">   <i className="fas fa-shopping-cart"></i> Mes Courses en Ligne</Link>
@@ -42,21 +44,24 @@ const Navbar = ({ filter, setFiltering,count })=>{
             <Link to="/panier">
              <i className="fas fa-shopping-bag fa-2x grey"></i>
              
-             <div class="p_icon">
+             
+             {/*<div class="p_icon">
                         <a href="#">
-                          <i class="ti-eye"></i>
+                          <i className="fas fa-eye fa-2x grey"></i>
                         </a>
                         <a href="#">
-                          <i class="ti-heart"></i>
+                          <i className="fas fa-heart fa-2x grey"></i>
                         </a>
                         <a href="#">
-                          <i class="ti-shopping-cart"></i>
+                        
+                          <i className="fas fa-shopping-cart fa-2x grey"></i>
                         </a>
-                      </div>
-            
+              </div>*/}
 
 
-             <span className="badge badge-pill badge-success">{count}</span>
+
+
+             <span className="badge badge-pill badge-success">{items.length > 0 && items.length}</span>
              </Link> 
 
             

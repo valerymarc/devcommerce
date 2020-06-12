@@ -1,14 +1,15 @@
 import React, {useState} from 'react';
 import { useDispatch } from 'react-redux';
-import {addToPanier} from '../lib/action'
+import {addToPanier} from '../lib/action';
+import '../style.css';
 
-const Modal = ({item, count, ajtPanier}) => {
+const Modal = ({item}) => {
    const [qty, setQty] = useState(1);
    
    const dispatch = useDispatch()
 
    const addPanier = (item, quantity) =>{
-     dispatch(addToPanier(item,quantity))
+     dispatch(addToPanier(item, quantity))
    }
   
    const compter = () =>{
@@ -29,7 +30,7 @@ const Modal = ({item, count, ajtPanier}) => {
 <div className="modal fade" id={item.ref} data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div className="modal-dialog">
     <div className="modal-content">
-      <div className="modal-header">
+      <div className="modal-header coul">
         <h5 className="modal-title" id="staticBackdropLabel">{item.name}</h5>
         <button type="button" className="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
