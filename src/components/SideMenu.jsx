@@ -11,7 +11,7 @@ const SideMenu = ({ chargeCategory, category }) => {
            <ul>
              <div className="ite">
                {liens.map((lien, index) =>{
-                 return(<div><li style={{color:'white'}}  className={category==index && 'btn btn-info active'} key={index}  onClick={()=>chargeCategory(index)} ><p>{lien}</p></li></div>);
+                 return(<div><li style={{color:'white'}}  className={category==index && 'btn btn-info active'} key={index}  onClick={()=>chargeCategory(index)} ><a><p>{lien}</p></a></li></div>);
                })}
                </div>
            </ul>

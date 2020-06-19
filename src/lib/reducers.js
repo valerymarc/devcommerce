@@ -30,6 +30,11 @@ export default function onlineStoreApp(state = initialState, action){
          case actions.SAVE_PANIER : 
          saveToLocalStorage(action.payload.items)
          return state
+         case actions.RESET_PANIER : 
+         saveToLocalStorage([])
+         return Object.assign({}, state, {
+             items : []
+         })
          default : return state
      }
 }

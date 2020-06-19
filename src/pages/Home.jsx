@@ -7,7 +7,7 @@ import List from '../components/List';
 const Home = props => {
     const {category, chargeCategory, filtering, filtered, list} = props
     return ( <div>
-        <div className="container">
+      <div className="container">
             
        <div className="row">
          <div className="col-sm-2 formal">

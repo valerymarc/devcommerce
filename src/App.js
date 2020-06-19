@@ -3,11 +3,13 @@ import logo from './logo.svg';
 import './App.css';
 import './style.css';
 import Navbar from './components/Navbar';
+import {UserProfileContextProvider} from './lib/UserProfileContext';
 import  { list } from './data';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Panier from './pages/Panier';
-import { updatePanier } from './lib/action';
+import Checkout from './pages/Checkout';
+import Confirm from './pages/Confirm';
 
 
 const App = props =>{
@@ -45,6 +47,8 @@ useEffect(()=>{
   return(<Fragment>
     
     <Router>
+      <UserProfileContextProvider>
+      
      <Navbar filter={filterResult} setFiltering={setFiltering} count={count}/>
      
     {/*Gestion des routes*/}
@@ -55,7 +59,9 @@ useEffect(()=>{
                                             
                                               list={list}/>} />
     <Route path="/panier" component={Panier}/>
-
+    <Route path="/checkout" component={Checkout}/>
+    <Route path="/confirm" component={Confirm}/>
+    </UserProfileContextProvider>
     </Router>
     </Fragment>); 
 }

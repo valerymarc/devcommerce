@@ -5,11 +5,13 @@ import { useSelector } from 'react-redux';
 import '../style.css';
 
 
-const Navbar = ({ filter, setFiltering,count })=>{
+const Navbar = ({ filter, setFiltering })=>{
   const items = useSelector(state => state.items)
+  
   return (
-    <nav className="navbar green navbar-expand-lg navbar-light bg-light fixed-top">
+    <nav className="navbar  green navbar-expand-lg navbar-light bg-light fixed-top">
         <Link className="navbar-brand crimson" to="/">   <i className="fas fa-shopping-cart"></i> Mes Courses en Ligne</Link>
+        
       
       <button
         className="navbar-toggler"
@@ -42,7 +44,7 @@ const Navbar = ({ filter, setFiltering,count })=>{
           <div className="menu-right">
              {/*Cart */}
             <Link to="/panier">
-             <i className="fas fa-shopping-bag fa-2x grey"></i>
+             <i className="fas fa-shopping-bag fa-2x grey "></i>
              
              
              {/*<div class="p_icon">

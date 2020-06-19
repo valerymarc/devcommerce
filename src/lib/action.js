@@ -5,7 +5,8 @@ export const actions  ={
     ADD_TO_PANIER : "ADD_TO_PANIER",
     UPDATE_PANIER : "UPDATE_PANIER",
     REMOVE_FROM_PANIER :  "REMOVE_FROM_PANIER",
-    SAVE_PANIER : "SAVE_PANIER"
+    SAVE_PANIER : "SAVE_PANIER",
+    RESET_PANIER : "RESET_PANIER"
 }
 
 
@@ -48,3 +49,10 @@ export const actions  ={
          payload:{items:items}
      }
  }
+
+ export function resetPanier(){
+    return{
+        type:actions.RESET_PANIER
+        
+    }
+}

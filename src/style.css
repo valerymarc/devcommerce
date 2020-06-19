@@ -30,8 +30,10 @@ body {
   }
   
   .bg-light.orange {
-    background: #ffc107!important;
+    /*background: #ffc107!important;*/
+    background: #0000ff!important;
   }
+  
   
   /* cart */
   .cart {
@@ -135,8 +137,14 @@ body {
   .align-right {
     text-align: right;
   }
+  
   .checkout {
     margin-top: 5px;
+    color:white!important;
+  }
+
+  .disabled{
+    opacity:.65;
   }
   .coupon {
     color: green;
@@ -194,7 +202,7 @@ body {
   }
 
   .ite{
-    background-color: darkmagenta;
+    background-color: darkmagenta!important;
   }
   
   .cat{
@@ -224,6 +232,10 @@ body {
   }
 
   .coul{
-    background-color: rgba(113, 205, 20, 0.4);
+   background-color: rgba(0, 255, 85, 0.4); 
+  }
+
+  .tryc{
+    background-color: burlywood!important;
   }
   
